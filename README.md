@@ -13,7 +13,7 @@
 
 <b>Models</b>
 <ul>
-	<li>As models já vem com as relações que fizemos  a capacitação</li>
+	<li>As models já vem com as relações que fizemos na capacitação</li>
 	<li>Houve a adição de novos métodos de relacionamento em Membro e Projeto (Isso eu vou explicar melhor na proxima capacitação)</li>
 </ul>
 
