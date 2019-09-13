@@ -32,7 +32,7 @@
 
 <b>Pasta Migrations</b>
 <ul>
-	<li>As migratios apresentam um esquema de como será a nossa tabela (Entidade ou Relacionamento) e lá que definimos a tipagem de nossos atributos;</li>
+	<li>As migrations apresentam um esquema de como será a nossa tabela (Entidade ou Relacionamento) e lá que definimos a tipagem de nossos atributos;</li>
 	<li>Podemos definir também as relações entre tabelas chaves extrangeiras e modos de deleção e atualização da regra vinculada a chave extrangeira;</li>
 	<li>Para gerar o arquivo Migration basta executar o comando <b>php artisan make:migration NomeMigration</b>;</li>
 	<li>Para criar as tabelas no banco de dados basta executar o comando <b>php artisan migration</b>.</li>
