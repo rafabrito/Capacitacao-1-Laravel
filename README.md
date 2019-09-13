@@ -1,6 +1,6 @@
 <h1>Capacitacao 1 Laravel</h1>
 
-<h5><b>Obs:.</b> As dependências do Laravel que ficam na pasta vendor não são enviados para o git, pois são ignoradas então após baixar o projeto na sua máquina Local execute o comando composer updade para baixar novamente a pasta vendor com as dependências</h5>
+<p><b>Obs:.</b> As dependências do Laravel que ficam na pasta vendor não são enviados para o git, pois são ignoradas então após baixar o projeto na sua máquina Local execute o comando composer updade para baixar novamente a pasta vendor com as dependências.</p>
 
 <h5>Pasta Importantes</h5>
 <ol>
@@ -48,13 +48,14 @@
 <b>Pasta Routes</b>
 <ul>
 	<li>Dentro da pasta routes temos o arquivo web.php é nesse arquivo que definimos as nossas rotas;</li>
-	<li>As rotas que respeitam a arquitetura MVC são descritas no formato <b>Route::Nome do método HTTP get, post, any('url', 'NomedoController@nomeDoMetodoDoController')</b></li>
+	<li>As rotas que respeitam a arquitetura MVC são descritas no formato <b>Route::Nome do método HTTP get, post, any('nome-da-url', 'NomedoController@nomeDoMetodoDoController')->name('nomedarota')</b>;</li>
+	<li>O name é opcional.</li>
 	<ul>
-		<li><b>Ex:</b> Route::get('/home/usuario', 'ControllerUsuario@painelUsuario') <b>php artisan migration</b>.</li>
+		<li><b>Ex:</b> Route::get('/home/usuario', 'ControllerUsuario@painelUsuario')->name('painel.usuario').</li>
 	</ul>
 </ul>
 
-<p><b>Veja mais na Documentação do Laravel:</b> https://laravel.com/docs/6.x"</p>
+<p><b>Vejam mais na Documentação do Laravel:</b> https://laravel.com/docs/6.x"</p>
 
 
 
