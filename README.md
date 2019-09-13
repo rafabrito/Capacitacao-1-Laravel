@@ -41,8 +41,8 @@
 <b>Pasta Seeds</b>
 <ul>
 	<li>Por meio das seeds podemos criar dados de teste para a nossa aplicação;</li>
-	<li>Para gerar o arquivo Seeds basta executar o comando <b>php artisan make:seeder NomeSeeder</b></li>
-	<li>Para povoar o banco de dados com os dados do seeds é necessário executar o comando <b>php artisan db:seed</b></li>
+	<li>Para gerar o arquivo Seeds basta executar o comando <b>php artisan make:seeder NomeSeeder</b>;</li>
+	<li>Para povoar o banco de dados com os dados do seeds é necessário executar o comando <b>php artisan db:seed</b>.</li>
 </ul>
 
 <b>Pasta Routes</b>
