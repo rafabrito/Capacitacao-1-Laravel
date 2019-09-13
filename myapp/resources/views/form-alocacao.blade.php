@@ -15,7 +15,7 @@
 		<nav class="navbar" role="navigation">
 	        <ul class="nav navbar-nav">
 	          <li class="item messages-menu">
-	           <a href="" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Voltar</a>
+	           <a href="{{ url('/lista-proj-mem') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Voltar</a>
 	          </li>
 	        </ul>
 	    </nav>
@@ -23,14 +23,15 @@
 
 	<div class="container">
 		<h3 style="text-align: center">Alocação de Membros para Projetos</h3>
-		<form method="post" action="" enctype="multipart/form-data">
-			<!-- @csrf previne contra requisições falsas de sistemas ou usuários maliciosos -->
+		<form method="post" action="{{url('/lista-proj-mem/salvar-alocacao')}}" enctype="multipart/form-data">
+			@csrf 
 			<div class="form-group">
 				<label>Membro</label>
 				<select class="form-control form-control-lg" name="membro">
-					<option value="">Nome</option>
-					<option value="">nome</option>
-					<option value="">Nome</option>
+					<option value="">-- Escolha um Membro --</option>
+					@foreach($membros as $membro)
+						<option value="{{ $membro->nome }} {{ $membro->sobrenome }}"> {{ $membro->nome }} {{ $membro->sobrenome }}</option>
+					@endforeach
 				</select>
 			</div>
 
@@ -38,9 +39,9 @@
 				<label>Projeto</label>
 				<select class="form-control form-control-lg" name="projeto">
 					<option value="">--- Escolha o Projeto ---</option>
-					<option value="">Nome</option>
-					<option value="">nome</option>
-					<option value="">Nome</option>
+					@foreach($projetos as $projeto)
+						<option value="{{ $projeto->nome_projeto }}">{{ $projeto->nome_projeto }}</option>
+					@endforeach
 				</select>
 			</div>
 

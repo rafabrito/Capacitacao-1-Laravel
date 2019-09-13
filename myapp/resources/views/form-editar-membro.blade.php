@@ -11,27 +11,42 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
+	<header class="main-header">
+		<nav class="navbar" role="navigation">
+	        <ul class="nav navbar-nav">
+	          <li class="item messages-menu">
+	           <a href="{{ url('/lista-proj-mem') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Voltar</a>
+	          </li>
+	        </ul>
+	    </nav>
+	</header>
+	
 	<br>
 	<div class="container">
 		<h3 style="text-align: center">Editar Dados do Membro</h3>
-		<form method="post" action="" enctype="multipart/form-data">
-			<!-- @csrf previne contra requisições falsas de sistemas ou usuários maliciosos -->
+		<form method="post" action="{{ url('/lista-proj-mem/editar/salvar')}}" enctype="multipart/form-data">
+			@csrf
 			<div class="form-group">
 				<label>Nome</label>
-				<input type="text" name="nome" class="form-control form-control-lg" value="">
+				<input type="text" name="nome" class="form-control form-control-lg" value="{{ $membro->nome }}">
 			</div>
 
 			<div class="form-group">
 				<label>Sobrenome</label>
-				<input type="text" name="sobrenome" class="form-control form-control-lg" value="">
+				<input type="text" name="sobrenome" class="form-control form-control-lg" value="{{ $membro->sobrenome }}">
 			</div>
 
 			<div class="form-group">
 				<label>Cargo</label>
-				<select class="form-control form-control-lg" name="membro">
-					<option value="">Cargo1</option>
-					<option value="">Cargo2</option>
-					<option value="">Cargo3</option>
+				<select class="form-control form-control-lg" name="cargo">
+					@foreach($cargos as $cargo)
+						<option value="{{ $cargo->nome_cargo }}"
+							@if(isset($membro) && $membro->cargo->nome_cargo == $cargo->nome_cargo)
+							 	selected
+							@endif
+							>{{ $cargo->nome_cargo }}
+						</option>
+					@endforeach
 				</select>
 			</div>
 

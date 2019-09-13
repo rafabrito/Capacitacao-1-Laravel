@@ -1,20 +1,60 @@
 <h1>Capacitacao 1 Laravel</h1>
-<b>Pasta seeds</b>
+
+<h5><b>Obs:.</b> As dependências do Laravel que ficam na pasta vendor não são enviados para o git, pois são ignoradas então após baixar o projeto na sua máquina Local execute o comando composer updade para baixar novamente a pasta vendor com as dependências</h5>
+
+<h5>Pasta Importantes</h5>
 <ol>
-	<li>Deve ser colocada na pasta database</li>
-	<li>Em seguida deve ser executado o comando php artisan db:seed</li>
-	<li>Se eventualmente ocorrer algum erro execute o comando php artisan migrate:fresh em seguida php artisan db:seed</li>
+	<li>Controllers : app\Http\Controllers</li>
+	<li>Model: app</li>
+	<li>View: resources\views</li>
+	<li>Migrations: database\migrations</li>
+	<li>Seeds: database\seeds</li>
+	<li>Rotas: routes\web.php</li>
 </ol>
 
-<b>Pasta views</b>
-<ol>
-	<li>Deve ser colocada na pasta resources</li>
-</ol>
-
-<b>Models</b>
+<b>Pasta Controller</b>
 <ul>
-	<li>As models já vem com as relações que fizemos na capacitação</li>
-	<li>Houve a adição de novos métodos de relacionamento em Membro e Projeto (Isso eu vou explicar melhor na proxima capacitação)</li>
+	<li>Nessa pasta ficam os arquivos Controllers lá nós manipulamos os dados do banco de dados;</li>
+	<li>Para gerar o arquivo controller basta executar o comando <b>php artisan make:controller NomeDoController</b>.</li>
 </ul>
+
+<b>Pasta Model</b>
+<ul>
+	<li>As models representam as nossas Entidades lá podemos definir os atributos preenchiveis, assim como as relações de Tabela para Tabela;</li>
+	<li>Para gerar o arquivo Model basta executar o comando <b>php artisan make:model NomeModel</b>.</li>
+</ul>
+
+<b>Pasta Views</b>
+<ul>
+	<li>As views elas são a nossa interface de interação com o usuário;</li>
+	<li>Elas no Laravel normalmente assumem a extenção <b>.blade.php</b> e não <b>.html</b>.</li>
+</ul>
+
+<b>Pasta Migrations</b>
+<ul>
+	<li>As migratios apresentam um esquema de como será a nossa tabela (Entidade ou Relacionamento) e lá que definimos a tipagem de nossos atributos;</li>
+	<li>Podemos definir também as relações entre tabelas chaves extrangeiras e modos de deleção e atualização da regra vinculada a chave extrangeira;</li>
+	<li>Para gerar o arquivo Migration basta executar o comando <b>php artisan make:migration NomeMigration</b>;</li>
+	<li>Para criar as tabelas no banco de dados basta executar o comando <b>php artisan migration</b>.</li>
+</ul>
+
+<b>Pasta Seeds</b>
+<ul>
+	<li>Por meio das seeds podemos criar dados de teste para a nossa aplicação;</li>
+	<li>Para gerar o arquivo Seeds basta executar o comando <b>php artisan make:seeder NomeSeeder</b></li>
+	<li>Para povoar o banco de dados com os dados do seeds é necessário executar o comando <b>php artisan db:seed</b></li>
+</ul>
+
+<b>Pasta Routes</b>
+<ul>
+	<li>Dentro da pasta routes temos o arquivo web.php é nesse arquivo que definimos as nossas rotas;</li>
+	<li>As rotas que respeitam a arquitetura MVC são descritas no formato <b>Route::Nome do método HTTP get, post, any('url', 'NomedoController@nomeDoMetodoDoController')</b></li>
+	<ul>
+		<li><b>Ex:</b> Route::get('/home/usuario', 'ControllerUsuario@painelUsuario') <b>php artisan migration</b>.</li>
+	</ul>
+</ul>
+
+<p><b>Veja mais na Documentação do Laravel:</b> https://laravel.com/docs/6.x"</p>
+
 
 

@@ -31,17 +31,25 @@
             </thead>
 
             <tbody>
-              <td align="center">Projeto 1</td>
-              <td align="center">Membro1</td>
-              <td align="center">Cargo</td>
-              <td align="center">12 horas</td>
-              <td align="center">12/11/2019</td>
+              <tr>
+                @foreach($membros as $membro)
+                  @foreach($membro->projetos as $projeto)
+                    <tr>
+                      <td align="center">{{ $projeto->nome_projeto }}</td>
+                      <td align="center">{{ $membro->nome }} {{ $membro->sobrenome }}</td>
+                      <td align="center">{{ $membro->cargo->nome_cargo }}</td>
+                      <td align="center">{{ $projeto->pivot->horas_trabalhadas }}</td>
+                      <td align="center">{{ $projeto->pivot->data_alocacao }}</td>
+                    </tr>
+                  @endforeach
+                @endforeach
+              </tr>
             </tbody>
           </table>
         </div>
         
         <div style="text-align: center;">
-          <a href="#" class="btn btn-primary"><i class="fa fa-tasks"></i> Realizar Alocação</a>
+          <a href="{{ url('/lista-proj-mem/alocacao') }}" class="btn btn-primary"><i class="fa fa-tasks"></i> Realizar Alocação</a>
         </div>
       </div>
     </div>
@@ -61,14 +69,18 @@
             </thead>
 
             <tbody>
-              <td align="center">Nome1</td>
-              <td align="center">Sobrenome1</td>
-              <td align="center">Cargo1</td>
-              <td align="center">
-                <a href="" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a>
-                &nbsp;&nbsp;
-                <a href="" class="btn btn-danger"><i class="fa fa-remove"></i> Deletar</a>
-              </td>
+              @foreach($membros as $membro)
+                <tr>
+                  <td align="center">{{ $membro->nome }}</td>
+                  <td align="center">{{ $membro->sobrenome }}</td>
+                  <td align="center">{{ $membro->cargo->nome_cargo }}</td>
+                  <td align="center">
+                    <a href="{{ url('/lista-proj-mem/editar/'.$membro->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a>
+                    &nbsp;&nbsp;
+                    <a href="{{ url('/lista-proj-mem/deletar/'.$membro->id) }}" class="btn btn-danger"><i class="fa fa-remove"></i> Deletar</a>
+                  </td>
+                </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
@@ -89,9 +101,13 @@
             </thead>
 
             <tbody>
-              <td align="center">Projeto 1</td>
-              <td align="center">11/02/2019</td>
-              <td align="center">12/06/2019</td>
+              @foreach($projetos as $projeto)
+                <tr>
+                  <td align="center">{{ $projeto->nome_projeto }}</td>
+                  <td align="center">{{ $projeto->data_inicio }}</td>
+                  <td align="center">{{ $projeto->data_fim }}</td>
+                </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
